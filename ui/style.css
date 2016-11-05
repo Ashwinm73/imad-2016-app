@@ -19,4 +19,16 @@ body {
 .img-medium {
     height: 200px;
 }
+div
+{
+    width:200px;
+    height:200px;
+    background:light grey;
+    transition:width 4s;
+    
+}
+div:hover
+{
+    width:400px;
+}
 
