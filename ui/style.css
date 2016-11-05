@@ -27,7 +27,7 @@ div.center
     transition:width 4s;
     
 }
-div:hover
+div:hover.center
 {
     width:400px;
 }
