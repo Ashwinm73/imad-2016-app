@@ -24,7 +24,6 @@ div
     margin:5px;
     width:200px;
     height:200px;
-    background:light grey;
     transform:translate(50px,1000px);
     transition:width 4s;
     
