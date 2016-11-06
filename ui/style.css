@@ -25,7 +25,7 @@ div
     width:200px;
     height:200px;
     background:light grey;
-    transform:translate(20,40);
+    transform:translate(50px,1000px);
     transition:width 4s;
     
 }
