@@ -1,7 +1,8 @@
 body {
-    font-family: sans-serif;
-    background-color: white;
+    font-family: Verdana;
+    background-color: black;
     margin-top: 75px;
+    color:white;
 }
 
 .center {
