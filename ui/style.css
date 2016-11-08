@@ -19,23 +19,3 @@ body {
 .img-medium {
     height: 200px;
 }
-div
-{
-    margin:5px;
-    width:200px;
-    height:200px;
-    transition:width 4s;
-    
-}
-div:hover
-{
-    width:700px;
-}
-
-iframe
-{
-    border:5px solid black;
-    margin-left:1px;
-    padding:1px;
-}
-    
