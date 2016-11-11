@@ -20,3 +20,7 @@ body {
 .img-medium {
     height: 200px;
 }
+
+.bton{
+     transform:translate(100px,100px);
+}
