@@ -24,3 +24,6 @@ body {
 .button{
      transform:translate(400px,50px);
 }
+.text{
+   color:"red";
+}
