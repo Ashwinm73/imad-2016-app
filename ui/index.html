@@ -12,18 +12,40 @@
         Am Ashwin <br/> 
         completed B.E computer science engineering at valliyammai Engineering college chennai <br/>
         </div>
-        <div>
-            <p><a href='/click'>click me</a></p>
-        </div>
        <div>
+       
             <h1>My First JavaScript</h1>
 
            <button type="button"
            onclick="document.getElementById('demo').innerHTML = Date()">
            Click me to display Date and Time.</button>
 
-        <p id="demo"></p>
  
+        </div>
+        <div>
+            <p id="geo">Click the button to get your coordinates.</p>
+
+             <button onclick="getLocation()">Try It</button>
+
+             
+
+        <script>
+          var x = document.getElementById("geo");
+
+          function getLocation() {
+           if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+         function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+         "<br>Longitude: " + position.coords.longitude;
+}
+      </script>
+
         </div>
        
         <script type="text/javascript" src="/ui/main.js">
