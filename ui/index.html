@@ -12,9 +12,26 @@
         Am Ashwin <br/> 
         completed B.E computer science engineering at valliyammai Engineering college chennai <br/>
         </div>
-        <div class="img-medium">
-            <a href="http://www.animatedimages.org/cat-light-bulb-510.htm"><img src="http://www.animatedimages.org/data/media/510/animated-light-bulb-image-0025.gif" border="0" alt="animated-light-bulb-image-0025"/></a>
+        <div>
+            <script>
+          function light(sw) {
+          var pic;
+          if (sw == 0) {
+          pic = "pic_bulboff.gif"
+          } else {
+          pic = "pic_bulbon.gif"
+         }
+         document.getElementById('myImage').src = pic;
+     }
+         </script>
+
+        <img id="myImage" class="img-medium"> <a href="http://www.animatedimages.org/cat-light-bulb-510.htm"><img src="http://www.animatedimages.org/data/media/510/animated-light-bulb-image-0023.gif" border="0" alt="animated-light-bulb-image-0023"/></a>
+       <p>
+       <button type="button" onclick="light(1)">Light On</button>
+       <button type="button" onclick="light(0)">Light Off</button>
+    </p>
         </div>
+       
        <div>
        
             <h1>My First JavaScript</h1>
