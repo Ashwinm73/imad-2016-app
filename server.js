@@ -40,7 +40,7 @@ app.post('/create-user', function (req, res) {
     var password = req.body.password;
     var salt = crypto.randomBytes(128).toString('hex');
     var dbstring = hash(password,salt);
-    pool.query('insert into "user" (username,password) VALUES ($1,$2)',[username],function(err,result) {
+    pool.query('insert into "user" (username,password) VALUES ($1,$2)',[username,dbString],function(err,result) {
          if(err){
             res.status(500).send(err.toString());
         } else {
@@ -54,7 +54,7 @@ app.post('/login', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
     
-    pool.query('SELECT* from "user" WHERE username=$1',[username,dbString],function(err,result) {
+    pool.query('SELECT* FROM "user" WHERE username=$1',[username],function(err,result) {
          if(err){
             res.status(500).send(err.toString());
         } else {
