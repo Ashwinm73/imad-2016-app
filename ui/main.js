@@ -1,6 +1,4 @@
 console.log('Loaded!');
-var nameinput=document.getelementbyId('name');
-var name=nameinput.value;
 var submit=document.getelementbyId('submit');
 submit.onclick=function(){
     var request = new xmlhttprequest();
@@ -23,6 +21,8 @@ submit.onclick=function(){
   }
     
 };
+var nameinput=document.getelementbyId('name');
+var name=nameinput.value;
 
 request.open('GET', 'http://http://ashwinm73.imad.hasura-app.io/submit-name?name='+name,true);
 request.send(null);
