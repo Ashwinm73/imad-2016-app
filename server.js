@@ -100,7 +100,7 @@ function createtemplate(data){
 
 app.get('/articles/:articlename', function (req, res) {
 
-    pool.query("SELECT*FROM article where title= $1",[req.para.s.articlename],function (err,result) {
+    pool.query("SELECT*FROM article where title= $1",[req.params.articlename],function (err,result) {
         if(err){
             res.status(500).send(err.tostring());
         } else {
