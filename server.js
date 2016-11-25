@@ -83,7 +83,7 @@ function createtemplate(data){
     </h3>
     
     <div>
-    ${date}
+    ${date.todatestring()}
     </div>
     
     <div>
