@@ -112,7 +112,6 @@ app.get('/articles/:articlename', function (req, res) {
             }
         }
     });
-  res.send(createtemplate(articles[articledata]));
 });
 
 app.get('/ui/style.css', function (req, res) {
