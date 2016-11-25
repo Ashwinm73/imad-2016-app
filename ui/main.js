@@ -1,29 +1,28 @@
 console.log('Loaded!');
-var submit=document.getelementbyId('submit');
+var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
     var request = new xmlhttprequest();
     
     request.onreadystatechange=function(){
         if(request.readystate=== xmlhttprequest.DONE) {
-            if(request.readystate===200) {
-                
-    
-    var names = request.responseText;
-    names=JSON.parse(names);
-    var list='';
-    for(var i=0;names.length;i++){
-        list +='<li>'+names[i]+'</li>';
-    }
-    var ul=document.getelementbyId('namelist');
-    ul.innerHTML=list;
-  }
+             if(request.status === 200) {
+                 alert('logged in sucessfully');
+                 
+             } else if (request.status === 403) {
+                 alert('username/password incorrect');
+             } else if (request.status === 500) {
+                 alert('someting went worng on server');
+                 
+             }
+             }
   
-  }
-    
-};
-var nameinput=document.getelementbyId('name');
-var name=nameinput.value;
+  };
+var username=document.getElementById('username').value;
+var password = document.getElementById('password').value;
+console.log(username);
+console.log(password);
 
-request.open('GET', 'http://http://ashwinm73.imad.hasura-app.io/submit-name?name='+name,true);
-request.send(null);
+request.open('POST', 'http://http://ashwinm73.imad.hasura-app.io/login',true);
+request.setrequestheader('content-type','application/json');
+request.send(JSON.stringify({username:username,password:password}));
 };
