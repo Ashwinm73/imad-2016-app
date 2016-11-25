@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 app.get('/click', function(req,res){
     res.sendfile(path.join(__dirname, 'ui', "click.html"));
 });
-var pool = new pool(config);
+var pool = new Pool(config);
 
 app.get('/test-db',function(req,res){
     pool.query('SELECT*FROM test',function(err,result){
