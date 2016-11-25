@@ -33,13 +33,28 @@ app.get('/test-db',function(req,res){
     });
     
 });
-var articleone={
+var articles={
+ 'article-one':{
     tittle:'Article one - Ashwin',
     heading:'Article one',
     date:'nov 05, 2016',
     content:'<p> this is frist article used to write in webapp</p> '
     
     
+},
+ 'article-two':{ 
+    tittle:'Article two - Ashwin',
+    heading:'Article two',
+    date:'nov 10, 2016',
+    content:'<p> this is second article used to write in webapp</p> '
+    },
+ 'article-three':{
+     tittle:'Article three - Ashwin',
+    heading:'Article three',
+    date:'nov 15, 2016',
+    content:'<p> this is third article used to write in webapp</p> '
+    
+}
 };
 
 function createtemplate(data){
@@ -86,8 +101,9 @@ function createtemplate(data){
 }
 
 
-app.get('/arcticle-one', function (req, res) {
-  res.send(createtemplate(articleone));
+app.get('/:articlename', function (req, res) {
+    var articlename = req.params.articlename;
+  res.send(createtemplate(articles[articlename]));
 });
 
 app.get('/ui/style.css', function (req, res) {
