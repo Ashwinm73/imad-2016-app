@@ -1,8 +1,12 @@
 body {
     font-family: Verdana;
-    background-color: red;
+    background-color: white;
     margin-top: 75px;
     color:black;
+}
+
+.text{
+    color:white;
 }
 
 
