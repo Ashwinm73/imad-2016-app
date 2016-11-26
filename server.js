@@ -4,6 +4,7 @@ var path = require('path');
  var Pool = require('pg').Pool;
  var crypto = require('crypto');
  var bodyparser = require('body-parser');
+ var session = require('express-session');
  
  
  var config={
@@ -19,6 +20,10 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyparser.json());
+app.use(session({
+    secret: 'someRandomsecretValue',
+    cookie:{ maxage: 1000*60*60*24*30}
+}));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -65,7 +70,13 @@ app.post('/login', function (req, res) {
                 var salt = dbString.split('$')[2];
                 var hashedPassword = hash(password,salt);
                 if(hashedPassword === dbString) {
+                    
+                    req.session.auth = {userid: result.rows[0].id};
+                    
+                    
                     res.send('credential correct');
+                
+                    
                 } else {
                     res.send(403).send('username/password invalid');
                     
@@ -76,8 +87,13 @@ app.post('/login', function (req, res) {
     });
 });
 
-
-    
+app.get('/check-login', function(req,res) {
+    if(req.session && req.session.auth && req.session.auth.userid) {
+        
+    } else {
+        res.send('you are not logged in');
+    }
+});
     var pool = new Pool(config);
     app.get('/test-db',function(req,res){
     pool.query('SELECT*FROM test',function(err,result){
@@ -142,7 +158,7 @@ function createtemplate(data){
     </h3>
     
     <div>
-    ${date.todatestring()}
+    ${date.todateString()}
     </div>
     
     <div>
