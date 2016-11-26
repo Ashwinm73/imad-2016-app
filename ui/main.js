@@ -1,7 +1,7 @@
 function loadLoginForm () {
     var loginHtml = `
-        <h3>Login/Register to unlock awesome features</h3>
-        <input type="text" id="username" placeholder="username" />
+        <h3>Login/Register to Make comment</h3>
+        <input type="text" id="username" placeholder="username" /> <br/>
         <input type="password" id="password" />
         <br/><br/>
         <input type="submit" id="login_btn" value="Login" />
@@ -40,7 +40,7 @@ function loadLoginForm () {
         request.open('POST', '/login', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify({username: username, password: password}));  
-        submit.value = 'Logging in...';
+        submit.value = 'please wait...';
         
     };
     
