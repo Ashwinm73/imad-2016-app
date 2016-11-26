@@ -1,10 +1,10 @@
 console.log('Loaded!');
 var submit=document.getElementById('submit_btn');
 submit.onclick=function(){
-    var request = new xmlhttprequest();
+    var request = new XMLhttprequest();
     
-    request.onreadystatechange=function(){
-        if(request.readystate=== xmlhttprequest.DONE) {
+    request.onreadystatechange = function(){
+        if(request.readystate === XMLhttprequest.DONE) {
              if(request.status === 200) {
                  alert('logged in sucessfully');
                  
