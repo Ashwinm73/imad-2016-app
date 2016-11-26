@@ -1,9 +1,10 @@
 body {
     font-family: Verdana;
-    background-color: white;
+    background-color: red;
     margin-top: 75px;
     color:black;
 }
+
 
 .center {
     text-align: center;
