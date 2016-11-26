@@ -18,7 +18,7 @@ function loadCommentForm () {
         
         request.onreadystatechange = function () {
           if (request.readyState === XMLHttpRequest.DONE) {
-                // Take some action
+                
                 if (request.status === 200) {
                 
                     document.getElementById('comment_text').value = '';
