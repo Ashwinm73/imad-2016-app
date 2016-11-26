@@ -105,6 +105,12 @@ app.get('/check-login', function(req,res) {
     });
     
 });
+
+app.get('/logout', function(req,res) {
+    delete req.session.auth;
+    res.send('looged out');
+});
+
 var articles={
  'article-one':{
     tittle:'Article one - Ashwin',
