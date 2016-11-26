@@ -22,7 +22,8 @@ function loadCommentForm () {
                 if (request.status === 200) {
                 
                     document.getElementById('comment_text').value = '';
-                    loadComments();    
+                    loadComments();
+                    
                 } else {
                     alert('Error! Could not submit comment');
                 }
