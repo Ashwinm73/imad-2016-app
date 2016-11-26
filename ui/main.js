@@ -19,6 +19,7 @@ function loadLoginForm () {
           if (request.readyState === XMLHttpRequest.DONE) {
              
               if (request.status === 200) {
+                   alert('Sucessfully saved in our database');
                   submit.value = 'Sucess!';
               } else if (request.status === 403) {
                   submit.value = 'Invalid credentials. Try again?';
