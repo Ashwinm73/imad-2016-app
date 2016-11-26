@@ -17,84 +17,18 @@
         Am Ashwin<br/>
         From chennai<br/>
         completed B.E computer science engineering at valliyammai Engineering college chennai <br/>
-        
-        <h3>login</h3>
-        <div>
-            
-         <input type="text" id="username" placeholder="username"/>
-          <input type="password" id="password"/>
-          <input type="submit" value="submit" id="submit_btn"/>
-          
-        </div>
-        <hr/>
-        
-
-        </div>
-        <div>
-             <h1>My JavaScripts</h1><hr/>
-        </div>
-        <div>
-            <h3>To Display Gif Image:</h3>
-        </div>
-        
-        <div>
-            <script>
-          function light(sw) {
-          var pic;
-          if (sw == 0) {
-          pic = "http://www.animatedimages.org/data/media/510/animated-light-bulb-image-0023.gif"
-          } else  {
-          pic = "http://www.animatedimages.org/data/media/510/animated-light-bulb-image-0023.gif"
-         }
-         document.getElementById('myImage').src = pic;
-     }
-     
-         </script>
-
-        <img id="myImage" class="img-medium"> <a href="http://www.animatedimages.org/cat-light-bulb-510.htm"><img src="http://www.animatedimages.org/data/media/510/animated-light-bulb-image-0023.gif" /></a>
-       <p>
-       <button type="button" onclick="light(1)">Light On</button>
-       <button type="button" onclick="light(0)">Light Off</button>
-        </p>
-        </div><hr/>
-       
-       <div>
-       <h3>Shows date and time:</h3>
-
-           <button  type="button"
-           onclick="document.getElementById('time').innerHTML = Date()">
-           Click me to display Date and Time. </button>
-           <div>
-           <p id='time'></p>
-           </div>
-           </div> 
-           <hr/>
-        
-        <div>
-            <h3>Geo Location:</h3>
-            <p id="geo">Click the button to get your coordinates.</p>
-
-             <button  onclick="getLocation()">Try It</button>
-
-         <script>
-          var x = document.getElementById("geo");
-
-          function getLocation() {
-           if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-    }
-
-         function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-         "<br>Longitude: " + position.coords.longitude;
-    }
-      </script>
-
-        </div>
-       
+       </div>
+       <hr/>
+            <div id="login_area">
+                <center>Loading login status...</center>
+            </div>
+            <hr/>
+            <h3>My Articles</h3>
+            <div id="articles">
+                <center>Loading articles...</center>
+            </div>
+            <div class="footer">
+            </div>
         <script type="text/javascript" src="/ui/main.js">
         </script>
     </body>
